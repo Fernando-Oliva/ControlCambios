@@ -1,0 +1,38 @@
+﻿<Window x:Class="ControlCambios.Views.ChangeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cambios en Archivo..." Height="500" Width="600" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Closed="Window_Closed" Icon="/ControlCambios;component/1400604056_183360.ico">
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox Height="25" Grid.Row="0" Grid.Column="0" Margin="5" Name="txtFileName" IsReadOnly="True" Background="LightGray"></TextBox>
+        <Button Height="75" Width="75" Grid.Row="0" Grid.Column="1" Name="btnSelectFile" Click="btnSelectFile_Click" Background="Transparent" BorderThickness="0" Cursor="Hand">
+            <DockPanel>
+                <Image Source="/Resources/selectFile.png"></Image>
+            </DockPanel>
+        </Button>
+        <TextBox Margin="5" Grid.Row="1" Grid.Column="0" AcceptsReturn="True" TextWrapping="Wrap" Name="txtChangeDescription"></TextBox>
+        <TextBlock Text="Por favor, describa brevemente el cambio realizado." Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="12"></TextBlock>
+        <CheckBox Name="cbPRE" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></CheckBox>
+        <TextBlock Text="Subido a PRE" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Center"></TextBlock>
+        <Button Height="75" Width="75" Grid.Column="1" Grid.Row="3" Name="btnSave" Click="btnSave_Click" Background="Transparent" BorderThickness="0" Cursor="Hand" Opacity="1.0">
+            <DockPanel>
+                <Image Source="/Resources/save.png"></Image>
+            </DockPanel>
+        </Button>
+        <Button Height="75" Width="75" Grid.Column="1" Grid.Row="3" Name="btnUpdate" Click="btnUpdate_Click" Visibility="Hidden" Background="Transparent">
+            <DockPanel>
+                <Image Source="/Resources/update.png"></Image>
+            </DockPanel>
+        </Button>
+        <Image Grid.Row="2" Source="/Resources/up.png" HorizontalAlignment="Center" Margin="0,0,10,14" Opacity="0.3" Grid.RowSpan="2"></Image>
+    </Grid>
+</Window>

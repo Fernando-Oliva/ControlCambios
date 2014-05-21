@@ -1,0 +1,26 @@
+﻿<Window x:Class="ControlCambios.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Control de Cambios" Height="477" Width="762" Icon="/ControlCambios;component/1400604056_183360.ico" WindowStartupLocation="CenterScreen">
+    <Grid Background="Gray">
+        <Grid.RowDefinitions>            
+            <RowDefinition Height="90"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Name="btnNew" Width="80" Height="65" Grid.Row="0" HorizontalAlignment="Center" Margin="10" Click="btnNew_Click" Background="Transparent" BorderThickness="0" Cursor="Hand">
+            <DockPanel>
+                <Image Source="/ControlCambios;component/Resources/new.png" />
+            </DockPanel>
+        </Button>
+        <Button Name="btnConfig" Width="30" Height="30" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="0" Click="btnConfig_Click" Background="Transparent" BorderThickness="0" Cursor="Hand">
+            <DockPanel>
+                <Image Source="/Resources/config.png" />
+            </DockPanel>
+        </Button>
+        <DataGrid x:FieldModifier="public" Grid.Row="1" Name="dgChanges" AutoGenerateColumns="True" CanUserResizeColumns="True" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserResizeRows="False" ItemsSource="{Binding}" IsReadOnly="True" MouseDoubleClick="dgChanges_MouseDoubleClick">
+            <DataGrid.Background>
+                <ImageBrush ImageSource="/ControlCambios;component/Resources/up.png" Stretch="None" TileMode="None" Opacity="0.3"/>
+            </DataGrid.Background>
+        </DataGrid>
+    </Grid>
+</Window>
